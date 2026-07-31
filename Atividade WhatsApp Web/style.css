@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 60px 320px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "icones lista chat";
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  grid-area: icones;
+  background-color: #202c33;
+  color: #fff;
+}
+
+aside {
+  grid-area: lista;
+  background-color: #ffffff;
+  border-right: 1px solid #d1d7db;
+}
+
+main {
+  grid-area: chat;
+  background-color: #efeae2;
+}
+
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "icones"
+      "chat";
+  }
+
+  aside {
+    display: none;
+  }
+}
