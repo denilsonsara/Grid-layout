@@ -128,6 +128,16 @@ aside {
   cursor: pointer;
 }
 
+.tab:hover {
+  background-color: #d9fdd3;
+  color: #08a047;
+}
+
+.tabs:hover .tab-ativa:not(:hover) {
+  background-color: transparent;
+  color: #54656f;
+}
+
 .tab-ativa {
   background-color: #d9fdd3;
   color: #08a047;
