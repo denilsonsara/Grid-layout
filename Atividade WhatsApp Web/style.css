@@ -20,7 +20,7 @@ body {
     "icones lista chat";
 }
 
-/* ===== NAV (coluna de ícones) ===== */
+
 
 nav {
   grid-area: icones;
@@ -48,7 +48,7 @@ nav {
   padding: 7px;
 }
 
-/* ===== ASIDE (lista de conversas) ===== */
+
 
 aside {
   grid-area: lista;
@@ -214,23 +214,123 @@ aside {
   place-items: center;
 }
 
-/* ===== MAIN (área do chat) ===== */
+
 
 main {
   grid-area: chat;
   background-color: #efeae2;
+  background-image: url('./assets/imgs/whatsapp_bg.png');
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-@media (max-width: 800px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas:
-      "icones"
-      "chat";
-  }
-
-  aside {
-    display: none;
-  }
+.header-chat {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  background-color:  #ffffff;
+  padding: 10px 20px;
 }
+
+.perfil-chat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-chat {
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.perfil-chat h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111b21;
+}
+
+.icones-chat {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.icones-chat img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.mensagens {
+  display: grid;
+  grid-auto-rows: max-content;
+  padding: 20px 40px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.balao {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 60;
+  font-size: 14px;
+}
+
+.balao.recebida {
+  background-color: #ffffff;
+  justify-self: start;
+}
+
+.balao.recebida .hora {
+  background-color:  #d9fdd3;
+  justify-self: end;
+}
+
+.balao p {
+  color: #111b21;
+}
+
+.hora-msg {
+  font-size: 11px;
+  color: #667781; 
+}
+
+.input-mensagem {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.input-mensagem img {
+  width: 24px;
+  cursor: pointer;
+  
+}
+
+.botao-enviar {
+  width: 26px !important;
+}
+
+.input-mensagem input {
+  border: none;
+  outline: none;
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #111b21;
+}
+
+
