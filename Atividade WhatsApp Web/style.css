@@ -228,7 +228,7 @@ main {
 
 .header-chat {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   background-color:  #ffffff;
   padding: 10px 20px;
@@ -269,9 +269,11 @@ main {
 .mensagens {
   display: grid;
   grid-auto-rows: max-content;
-  padding: 20px 40px;
+  align-content: start;
   gap: 10px;
+  padding: 20px 40px;
   overflow-y: auto;
+  margin-top: auto;
 }
 
 .balao {
@@ -281,7 +283,7 @@ main {
   gap: 12px;
   padding: 8px 12px;
   border-radius: 8px;
-  max-width: 60;
+  max-width: 60%;
   font-size: 14px;
 }
 
@@ -290,7 +292,7 @@ main {
   justify-self: start;
 }
 
-.balao.recebida .hora {
+.balao.enviada {
   background-color:  #d9fdd3;
   justify-self: end;
 }
@@ -333,4 +335,20 @@ main {
   color: #111b21;
 }
 
+.input-mensagem input::placeholder {
+  color: #667781;
+}
 
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      "icones"
+      "chat";
+  }
+
+  aside {
+    display: none;
+  }
+}
