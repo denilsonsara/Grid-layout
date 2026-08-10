@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    background: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.folha {
+    width: 180px;
+    height: 240px;
+    background: #fdfdfd;
+    border: 0px solid #888;
+    position: relative;
+  
+}
+
+.dobra {
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-left: 60px solid #d9d9d9;
+    border-bottom: 0 solid transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.pacman {
+    width: 180px;
+    height: 180px;
+    background: #f4d03f;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pacman::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f4d03f;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 50%);
+}
+
+.olho {
+    width: 22px;
+    height: 22px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 38px;
+    right: 42px;
+    z-index: 2;
+}
+
+.triangulo {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid rgb(43, 226, 58);
+    position: absolute;
+    rotate: 180deg;
+    right: 50px;
+}
+
+.elemento-pai {
+    width: 200px;
+    height: 100px;
+    background-color: #d4f12c8f;
+    position: relative;
+}
+
+/* Overlay (div pai) */
+.pai {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* use .pai.active to show */
+}
+
+.pai.active {
+    display: block;
+}
