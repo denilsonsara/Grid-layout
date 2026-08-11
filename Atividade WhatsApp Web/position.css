@@ -30,7 +30,7 @@ body {
 .dobra {
     width: 0;
     height: 0;
-    border-top: 60px solid transparent;
+    border-top: 60px solid #f3f3f3;
     border-left: 60px solid #d9d9d9;
     border-bottom: 0 solid transparent;
     position: absolute;
@@ -47,13 +47,16 @@ body {
     overflow: hidden;
 }
 
-.pacman::before {
-    content: "";
+.boca {
+    width: 0;
+    height: 0;
+    border-top: 55px solid transparent;
+    border-bottom: 55px solid transparent;
+    border-right: 100px solid #f3f3f3;
     position: absolute;
-    inset: 0;
-    background: #f4d03f;
-    border-radius: 50%;
-    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 50%);
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
 }
 
 .olho {
@@ -83,13 +86,35 @@ body {
     position: relative;
 }
 
-/* Overlay (div pai) */
+
+.rosca {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #6fcf6f 0deg 95deg,
+        #f2c94c 95deg 180deg,
+        #56ccf2 180deg 275deg,
+        #eb5757 275deg 360deg
+    );
+    position: relative;
+    rotate: 310deg;
+}
+
+.rosca::before {
+    content: "";
+    position: absolute;
+    inset: 30px;
+    background: #f3f3f3;
+    border-radius: 50%;
+}
+
 .pai {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    display: none; /* use .pai.active to show */
+    display: none; 
 }
 
 .pai.active {
