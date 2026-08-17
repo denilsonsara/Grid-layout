@@ -607,4 +607,7 @@ export function listarContatosUsuario() {
   console.table(usuarios["whats-users"][idUsuario].contacts);
 }
 
+export function listarMensagensContato(idUsuario, idContato) {
+  console.table(usuarios["whats-users"][idUsuario].contacts[idContato].messages);
+}
 

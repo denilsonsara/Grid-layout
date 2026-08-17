@@ -1,4 +1,4 @@
-import { listarUsuarios, listarContatosUsuario } from "./assets/usuario.js";
+import { listarUsuarios, listarContatosUsuario, listarMensagensContato } from "./assets/usuario.js";
 
 listarContatosUsuario(2);
 
@@ -23,6 +23,16 @@ function getHour() {
   return data;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const botaoPerfil = document.querySelector("#abrir-perfil");
+  const painelPerfil = document.querySelector("#painel-perfil");
+
+  if (botaoPerfil && painelPerfil) {
+    botaoPerfil.addEventListener("click", () => {
+      painelPerfil.classList.toggle("active");
+    });
+  }
+});
 function insertMessage(message) {
   const article = document.createElement("article");
   const paragrafo = document.createElement("p");

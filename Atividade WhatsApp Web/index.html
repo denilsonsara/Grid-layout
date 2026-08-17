@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>WhatsApp Web</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer type="module"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+    <script src="trecho-perfil.js" defer></script>
+
 </head>
 <body>
 
@@ -17,11 +19,69 @@
     </div>
     <div class="container-nav">
         <img src="./assets/icons/settings.svg" alt="">
-        <img src="./assets/imgs/Dono_WhatsApp.jpg" alt="Dono do WhatsApp">
+    
+        <img id="abrir-perfil" src="./assets/imgs/Dono_WhatsApp.jpg" alt="Dono do WhatsApp">
     </div>
   </nav>
 
   <aside>
+
+    <div class="painel-perfil" id="painel-perfil">
+
+        <h1 class="titulo-perfil">Perfil</h1>
+
+        <div class="foto-perfil-container">
+            <img class="foto-perfil" src="./assets/imgs/Dono_WhatsApp.jpg" alt="Foto de perfil">
+        </div>
+
+        <div class="campo-perfil">
+            <span class="label-campo">Nome</span>
+            <p class="valor-campo">Ricardo da Silva</p>
+        </div>
+
+        <div class="campo-perfil">
+            <span class="label-campo">Recado</span>
+            <div class="linha-editavel">
+                <p class="valor-campo">Disponível</p>
+                <img class="icone-acao" src="./assets/icons/cursor-pointer.svg" alt="Editar recado">
+            </div>
+        </div>
+
+        <div class="campo-perfil">
+            <span class="label-campo">Telefone</span>
+            <div class="linha-editavel">
+                <div class="telefone-info">
+                    <img class="icone-info" src="./assets/icons/phone.svg" alt="">
+                    <p class="valor-campo">+55 11 98787 6567</p>
+                </div>
+                <img class="icone-acao" src="./assets/icons/copy-btn.svg" alt="Copiar telefone">
+            </div>
+        </div>
+
+        <div class="trocar-perfil">
+            <h2>Trocar de Perfil</h2>
+            <div class="lista-perfis">
+                <div class="mini-perfil">
+                    <img src="./assets/imgs/Bob_Marla.jpg" alt="Bob Marla">
+                    <span>Bob Marla</span>
+                </div>
+                <div class="mini-perfil">
+                    <img src="./assets/imgs/Latino.jpg" alt="Latino">
+                    <span>Latino</span>
+                </div>
+                <div class="mini-perfil">
+                    <img src="./assets/imgs/Rick_Martin.jpg" alt="Rick Martin">
+                    <span>Rick Martin</span>
+                </div>
+                <div class="mini-perfil">
+                    <img src="./assets/imgs/Super_Mariah.jpg" alt="Super Mariah">
+                    <span>Super Mariah</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div class="header-lista">
         <h1>WhatsApp</h1>
         <div class="icones-header">

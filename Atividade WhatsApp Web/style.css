@@ -57,6 +57,121 @@ aside {
   display: grid;
   grid-template-rows: auto auto auto 1fr;
   overflow: hidden;
+
+  position: relative;
+}
+
+.painel-perfil {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  overflow-y: auto;
+
+  row-gap: 28px;
+  padding: 24px 20px;
+}
+.painel-perfil.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-perfil {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111b21;
+}
+
+.foto-perfil-container {
+  display: grid;
+  justify-items: center;
+}
+
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.campo-perfil {
+  display: grid;
+  row-gap: 6px;
+}
+
+.label-campo {
+  font-size: 13px;
+  font-weight: 600;
+  color: #667781;
+}
+
+.valor-campo {
+  font-size: 17px;
+  color: #111b21;
+}
+
+.linha-editavel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.telefone-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.icone-info {
+  width: 18px;
+}
+
+.icone-acao {
+  width: 40px;
+  padding: 7px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.trocar-perfil {
+  display: grid;
+  row-gap: 16px;
+  align-content: start;
+  margin-top: auto;
+}
+
+.trocar-perfil h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111b21;
+}
+
+.lista-perfis {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  column-gap: 24px;
+}
+
+.mini-perfil {
+  display: grid;
+  justify-items: center;
+  row-gap: 6px;
+  cursor: pointer;
+}
+
+.mini-perfil img {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.mini-perfil span {
+  font-size: 13px;
+  color: #111b21;
 }
 
 .header-lista {
@@ -80,7 +195,7 @@ aside {
 }
 
 .icones-header img {
-  width: 40;
+  width: 40px;
   padding: 7px;
   border-radius: 100%;
   cursor: pointer;
@@ -285,16 +400,44 @@ main {
   border-radius: 8px;
   max-width: 60%;
   font-size: 14px;
+
+    position: relative;
 }
 
 .balao.recebida {
   background-color: #ffffff;
   justify-self: start;
+
+    border-top-left-radius: 0;
+}
+
+.balao.recebida::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #ffffff;
+  border-left: 8px solid transparent;
 }
 
 .balao.enviada {
   background-color:  #d9fdd3;
   justify-self: end;
+
+  border-top-right-radius: 0;
+}
+
+.balao.enviada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #d9fdd3;
+  border-right: 8px solid transparent;
 }
 
 .balao p {
@@ -350,5 +493,7 @@ main {
 
   aside {
     display: none;
-  }
+  }  
+  
 }
+
